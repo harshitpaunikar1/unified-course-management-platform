@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Integration over Sprawl: The Unified Learning Architecture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,700;1,300&family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Greyscale Campus Layout Theme */
+    :root {
+      --bg: #ffffff;
+      --fg: #111111;
+      --text: #333333;
+      --text-muted: #666666;
+      --border-soft: #eeeeee;
+      --border-hard: #111111;
+      --highlight: #f8f8f8;
+      
+      --font-body: 'Merriweather', serif;
+      --font-mono: 'Source Code Pro', monospace;
+    }
+
+    /* Base Reset */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    /* Container */
+    .viewport {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    header {
+      margin-bottom: 5rem;
+      border-bottom: 3px double var(--border-hard);
+      padding-bottom: 2rem;
+    }
+
+    h1 {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--fg);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.25;
+      letter-spacing: -0.05em;
+      margin-bottom: 1.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 800px;
+    }
+
+    p { margin-bottom: 1.5rem; }
+
+    /* Curriculum Milestone H2s */
+    h2 {
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--bg);
+      background-color: var(--fg);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.5rem 1rem;
+      margin: 4.5rem 0 2rem 0;
+      display: inline-block;
+    }
+
+    h3 {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin: 2.5rem 0 1rem 0;
+      border-bottom: 1px solid var(--border-soft);
+      padding-bottom: 0.25rem;
+    }
+
+    /* Paired Journey Columns */
+    .journey-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin: 4rem 0;
+      background-color: var(--highlight);
+      border: 1px solid var(--border-hard);
+    }
+    
+    .journey-column {
+      padding: 2.5rem;
+    }
+    
+    .journey-column.instructor {
+      border-right: 1px dashed var(--text-muted);
+    }
+
+    .journey-label {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      color: var(--fg);
+    }
+    .journey-label::before {
+      content: '';
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      background-color: var(--fg);
+      margin-right: 0.75rem;
+    }
+    .learner .journey-label::before {
+      background-color: transparent;
+      border: 2px solid var(--fg);
+    }
+
+    @media (max-width: 768px) {
+      .journey-split { grid-template-columns: 1fr; gap: 0; }
+      .journey-column.instructor { border-right: none; border-bottom: 1px dashed var(--text-muted); }
+    }
+
+    /* Wide Figure Breaks */
+    .roomy-figure {
+      margin: 6rem -4rem; /* Break out of container */
+      padding: 0 4rem;
+    }
+    @media (max-width: 900px) {
+      .roomy-figure { margin: 4rem 0; padding: 0; }
+    }
+    
+    .svg-campus-map {
+      width: 100%;
+      border: 2px solid var(--border-hard);
+      background-color: var(--bg);
+      padding: 4rem 2rem;
+      box-shadow: 12px 12px 0 var(--border-soft);
+    }
+
+    figcaption {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 2rem;
+      text-align: center;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Code/Monospace segments */
+    .constraint-box {
+      border: 1px solid var(--border-hard);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      background-color: var(--bg);
+    }
+    .constraint-box span {
+      display: block;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="viewport">
+    <header>
+      <h1>Integration over Sprawl: Rebuilding the Learning Architecture</h1>
+      <p class="subtitle">Higher education technology suffers from tool sprawl. An institution typically runs a video platform, a separate grading rubric logic module, a third-party assessment engine, and an early-warning analytics dashboard. A unified course management platform replaces these fractured silos with a connected operating surface, defined by how data flows gracefully from the instructor's desk to the learner's screen.</p>
+    </header>
+
+    <p>A learning platform is not a collection of web forms for uploading PDFs. It is an orchestration engine. When a university strings together disparate software packages via loose LTI (Learning Tools Interoperability) links, they offload the integration pain directly onto the users. Instructors are forced to duplicate rubrics across three systems, and learners are forced to authenticate into distinct portals to match their lecture video with their quiz assignment.</p>
+
+    <p>A unified architecture solves this by treating the course as a central state machine. Assessments, gradebooks, and analytics are not separate apps; they are strictly defined views querying the exact same underlying course data structure. To understand the architectural value, we must trace how a single educational intent travels through the platform.</p>
+
+    <h2>[MILESTONE :: COURSE_ASSEMBLY]</h2>
+
+    <p>The first interaction with the platform dictates the structural integrity of everything that follows. In a fragmented system, authoring is merely document storage. In a unified architecture, authoring is the explicit binding of content to measurable outcomes.</p>
+
+    <div class="journey-split">
+      <div class="journey-column instructor">
+        <div class="journey-label">Instructor Path</div>
+        <p>The instructor enters the <strong>Authoring Building</strong>. Instead of uploading a flat syllabus, they construct a directed acyclic graph (DAG) of modules. A lecture video node is structurally linked to an assessment node. The instructor defines access constraints (e.g., "Module 2 unlocks when Quiz 1 scores > 80%"). Because the platform owns both ends, these rules are natively enforced by the backend API, requiring no fragile webhooks to third-party services.</p>
+      </div>
+      <div class="journey-column learner">
+        <div class="journey-label">Learner Path</div>
+        <p>The learner logs into the <strong>Delivery Surface</strong>. The UI interprets the DAG established by the instructor. The learner does not see a rigid folder structure; they see an active trajectory. The video player seamlessly transitions into the inline quiz without reloading the application boundary, because the video metadata and the quiz payload are served from the same unified GraphQL endpoint.</p>
+      </div>
+    </div>
+
+    <!-- Campus Map Diagram -->
+    <div class="roomy-figure">
+      <div class="svg-campus-map">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="100%">
+          <rect width="1000" height="450" fill="#ffffff" />
+          
+          <!-- Pathways -->
+          <line x1="200" y1="150" x2="800" y2="150" stroke="#eeeeee" stroke-width="40" />
+          <line x1="200" y1="300" x2="800" y2="300" stroke="#eeeeee" stroke-width="40" />
+          <line x1="500" y1="150" x2="500" y2="300" stroke="#eeeeee" stroke-width="40" />
+
+          <!-- Path Arrows (Learner: dotted/grey, Instructor: solid/black) -->
+          <path d="M 100 130 C 300 130, 450 170, 700 130" fill="none" stroke="#111111" stroke-width="2" marker-end="url(#arrow-black)" />
+          <text x="150" y="120" font-family="'Source Code Pro', monospace" font-size="10" font-weight="700" fill="#111111">INSTRUCTOR PREP</text>
+
+          <path d="M 100 320 C 300 320, 450 280, 700 320" fill="none" stroke="#666666" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrow-grey)" />
+          <text x="150" y="340" font-family="'Source Code Pro', monospace" font-size="10" font-weight="700" fill="#666666">LEARNER PROGRESSION</text>
+
+          <!-- Core Buildings/Modules -->
+          <!-- Authoring -->
+          <rect x="250" y="50" width="140" height="80" fill="#ffffff" stroke="#111111" stroke-width="3" />
+          <text x="320" y="90" font-family="'Source Code Pro', monospace" font-size="12" font-weight="700" text-anchor="middle" fill="#111111">AUTHORING</text>
+          <text x="320" y="105" font-family="'Source Code Pro', monospace" font-size="9" text-anchor="middle" fill="#666666">DAG Construction</text>
+          
+          <!-- Delivery -->
+          <rect x="250" y="320" width="140" height="80" fill="#111111" />
+          <text x="320" y="360" font-family="'Source Code Pro', monospace" font-size="12" font-weight="700" text-anchor="middle" fill="#ffffff">DELIVERY</text>
+          <text x="320" y="375" font-family="'Source Code Pro', monospace" font-size="9" text-anchor="middle" fill="#aaaaaa">Content Consumption</text>
+
+          <!-- Assessments -->
+          <rect x="610" y="50" width="140" height="80" fill="#ffffff" stroke="#111111" stroke-width="3" />
+          <text x="680" y="90" font-family="'Source Code Pro', monospace" font-size="12" font-weight="700" text-anchor="middle" fill="#111111">ASSESSMENTS</text>
+          <text x="680" y="105" font-family="'Source Code Pro', monospace" font-size="9" text-anchor="middle" fill="#666666">Evaluation Engine</text>
+
+          <!-- Gradebook -->
+          <rect x="610" y="320" width="140" height="80" fill="#ffffff" stroke="#111111" stroke-width="3" />
+          <text x="680" y="360" font-family="'Source Code Pro', monospace" font-size="12" font-weight="700" text-anchor="middle" fill="#111111">GRADEBOOK</text>
+          <text x="680" y="375" font-family="'Source Code Pro', monospace" font-size="9" text-anchor="middle" fill="#666666">Score Rollups</text>
+
+          <!-- Center Analytics / Alerts -->
+          <rect x="420" y="200" width="160" height="50" fill="#f8f8f8" stroke="#333333" stroke-width="2" stroke-dasharray="2 2" />
+          <text x="500" y="225" font-family="'Source Code Pro', monospace" font-size="12" font-weight="700" text-anchor="middle" fill="#111111">ANALYTICS & ALERTS</text>
+          <text x="500" y="240" font-family="'Source Code Pro', monospace" font-size="9" text-anchor="middle" fill="#666666">Real-time Telemetry</text>
+
+          <!-- Data flow lines into center -->
+          <line x1="320" y1="320" x2="420" y2="250" stroke="#cccccc" stroke-width="1" marker-end="url(#arrow-grey)" />
+          <line x1="680" y1="320" x2="580" y2="250" stroke="#cccccc" stroke-width="1" marker-end="url(#arrow-grey)" />
+
+          <defs>
+            <marker id="arrow-black" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+              <polygon points="0 0, 6 3, 0 6" fill="#111111" />
+            </marker>
+            <marker id="arrow-grey" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+              <polygon points="0 0, 6 3, 0 6" fill="#666666" />
+            </marker>
+          </defs>
+        </svg>
+      </div>
+      <figcaption>Fig 1. — The Module Campus Map. Instructor trajectories (solid lines) define the bounds of the Authoring and Assessment zones. Learner trajectories (dashed lines) consume the Delivery and Assessment boundaries. The Gradebook acts as the shared ledger. Because all components share a single database state, the central Analytics building passively vacuums telemetry from the entire campus without requiring complex ETL pipelines.</figcaption>
+    </div>
+
+    <h2>[MILESTONE :: EVALUATION_LEDGER]</h2>
+
+    <p>Assessments in disconnected systems generate orphaned scores. A grade is dropped into an external CSV, imported manually by a TA, and mapped loosely to a student ID. If the submission is updated, the sync script fails, and the gradebook diverges from reality.</p>
+
+    <div class="journey-split">
+      <div class="journey-column learner">
+        <div class="journey-label">Learner Path</div>
+        <p>The learner completes an essay inside the <strong>Assessment Engine</strong>. The moment they hit submit, the telemetry engine locks the submission timestamp into the unified database. The learner immediately sees a "Pending Grading" state across their global dashboard, preventing anxiety regarding missing files.</p>
+      </div>
+      <div class="journey-column instructor">
+        <div class="journey-label">Instructor Path</div>
+        <p>The instructor opens the <strong>Gradebook Ledger</strong>. The ledger is not a separate application waiting for a sync job; it is a live query of the Assessment Engine's state. When the instructor highlights text and attaches rubric criteria, the final score inherently mutates the single source of truth. There is no CSV export. The grade is instantly reflected in the learner's view.</p>
+      </div>
+    </div>
+
+    <h2>[MILESTONE :: TELEMETRY_ALERTS]</h2>
+
+    <p>The final, perhaps most vital architectural benefit of a unified system is the ability to generate a reliable At-Risk Learner pipeline. Disconnected systems attempt this by patching together delayed gradebook data with clumsy login timestamps.</p>
+
+    <p>Our unified campus map allows the <strong>Analytics</strong> module to observe the entire ecosystem asynchronously. It watches the delivery surface (Did the learner complete the video?), the assessment boundary (Has the quiz been started 24 hours before the deadline?), and the gradebook ledger (Is the rolling average dropping below the cohort median?).</p>
+
+    <div class="constraint-box">
+      <span>Early Warning Pipeline Rule</span>
+      <code>IF (Video_Completion < 20% OR Log_Absence > 4 DAYS) && Active_Assessments > 0</code><br>
+      <code>THEN Emit Pipeline Alert to Subject TA</code>
+    </div>
+
+    <p>By enforcing a strict, unified data model beneath the course management layer, the platform restores agency to the educators. They stop debugging complex API handshakes between third-party vendors and return to the work of analyzing intervention signals. A unified architecture is not merely about aesthetic convenience; it is about establishing a singular, dependable truth that allows the institution to teach reliably at scale.</p>
+  </div>
+
+</body>
+</html>
