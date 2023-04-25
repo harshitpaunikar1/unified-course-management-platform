@@ -16,3 +16,7 @@
 
 - Task summary: Late-night fix: resolved a merge conflict that came up when I switched branches to check something else.
 - Deliverable: Pushed before end of day.
+## 2023-04-25 - Day 2: Research pass
+
+- Task summary: Circled back: updated the requirements file — had missed one indirect dependency.
+- Deliverable: Cleaner than this morning's version.
