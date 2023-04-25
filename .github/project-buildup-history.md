@@ -12,3 +12,7 @@
 
 - Task summary: Used the next day to keep the momentum going for Unified Course Management Platform. I was still piecing things together, so I focused on trying to collect examples, competitor references, and raw notes before choosing features and wrote down the stuff that looked important. I was still mostly figuring out the shape of it, so a lot of the day went into small notes and half clear ideas. I was also trying to keep the idea grounded so it did not drift into random features for no reason.
 - Deliverable: I wrapped up the day with research notes mostly in place. It was not perfect, but it was good enough to keep the project moving. I also left myself a few rough reminders for the next day so I would not have to rediscover the same context again.
+## 2023-04-25 - Day 2: Research pass
+
+- Task summary: Late-night fix: resolved a merge conflict that came up when I switched branches to check something else.
+- Deliverable: Pushed before end of day.
