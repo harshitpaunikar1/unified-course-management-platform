@@ -24,3 +24,7 @@
 
 - Task summary: By this point I had the rough direction, so the work became more practical. I spent most of the day trying to decide what belongs in version 1 and what can wait and make the whole thing feel less half baked. The middle part always takes longer than it should, mostly becuase one fix usually reveals two more things to clean up. A good chunk of the day went into making the flow feel believable from a user point of view.
 - Deliverable: I wrapped up the day with feature scope mostly in place. It was not perfect, but it was good enough to keep the project moving. There were still a couple of loose parts, but nothing serious enough to block the next step.
+## 2023-04-26 - Day 3: Scope pass
+
+- Task summary: Came back after lunch and realized fixed a type coercion issue that was causing silent NaN propagation downstream.
+- Deliverable: One of those satisfying small wins.
