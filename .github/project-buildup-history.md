@@ -18,7 +18,7 @@
 - Deliverable: Pushed before end of day.
 ## 2023-04-25 - Day 2: Research pass
 
-- Task summary: Circled back: updated the requirements file — had missed one indirect dependency.
+- Task summary: Circled back: updated the requirements file - had missed one indirect dependency.
 - Deliverable: Cleaner than this morning's version.
 ## 2023-04-26 - Day 3: Scope pass
 
@@ -58,7 +58,7 @@
 - Deliverable: Ended the day with working interactions in hand, plus a few side notes on what still needed fixing later. There were still a couple of loose parts, but nothing serious enough to block the next step.
 ## 2023-05-04 - Day 9: Interactions
 
-- Task summary: Spent another hour on this: added inline comments in the dense sections — would have been confusing to revisit without them.
+- Task summary: Spent another hour on this: added inline comments in the dense sections - would have been confusing to revisit without them.
 - Deliverable: Minor but worth doing.
 ## 2023-05-05 - Day 10: Artifacts
 
